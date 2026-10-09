@@ -1,4 +1,6 @@
 type Theme = "light" | "dark";
+let themeTransitionFrame: number | undefined;
+
 function getInitialTheme(): Theme {
   try {
     const stored = localStorage.getItem("theme");
@@ -6,12 +8,27 @@ function getInitialTheme(): Theme {
   } catch {
     /* Allow theme switching when browser storage is blocked. */
   }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 function applyTheme(theme: Theme) {
-  document.documentElement.classList.toggle("dark", theme === "dark");
+  const root = document.documentElement;
+  const dark = theme === "dark";
+  if (root.classList.contains("dark") === dark) return;
+  if (themeTransitionFrame !== undefined) {
+    cancelAnimationFrame(themeTransitionFrame);
+  }
+  // Commit every theme color in one frame, regardless of component transitions.
+  root.setAttribute("data-theme-changing", "");
+  void root.offsetWidth;
+  root.classList.toggle("dark", dark);
+  void root.offsetWidth;
+  // Allow reactive theme updates to render before restoring hover transitions.
+  themeTransitionFrame = requestAnimationFrame(() => {
+    themeTransitionFrame = requestAnimationFrame(() => {
+      root.removeAttribute("data-theme-changing");
+      themeTransitionFrame = undefined;
+    });
+  });
 }
 function initTheme() {
   const theme = getInitialTheme();

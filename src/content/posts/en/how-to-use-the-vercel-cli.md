@@ -31,6 +31,13 @@ npm i -g vercel@latest
 vercel login
 ```
 
+## Short configurations
+
+```sh
+vercel telemetry status
+vercel telemetry disable
+```
+
 ## Deploy a new project from a directory
 
 For a single repo with one project.

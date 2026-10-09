@@ -59,6 +59,7 @@
   "category.frontend": "フロントエンド",
   "category.notes": "開発ノート",
   "category.life": "日々のこと",
+  "category.learn": "コードを学べ",
   "post.archiveEyebrow": "アーカイブ",
   "post.archiveTitle": "言葉に残した時間",
   "post.archiveIntro": "{count} 件の記事。一つひとつが成長の足跡です。",
@@ -247,5 +248,6 @@
   "cover.designTitle": "まず作ってみよう",
   "cover.designSubtitle": "アイデアを形に",
   "cover.featuredTitle": "こんにちは、{site}",
-  "cover.featuredSubtitle": "ここから新しい物語が始まる"
+  "cover.featuredSubtitle": "ここから新しい物語が始まる",
+  "cover.goSubtitle": "SMALL COMMITS, BETTER STORIES"
 }

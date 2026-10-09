@@ -59,6 +59,7 @@
   "category.frontend": "Frontend",
   "category.notes": "Dev notes",
   "category.life": "Everyday life",
+  "category.learn": "Learn code",
   "post.archiveEyebrow": "THE ARCHIVE",
   "post.archiveTitle": "Time, kept in words",
   "post.archiveIntro": "{count} posts, each a small step along the way.",
@@ -247,5 +248,6 @@
   "cover.designTitle": "Just create.",
   "cover.designSubtitle": "TURN AN IDEA INTO SOMETHING",
   "cover.featuredTitle": "Hello, {site}.",
-  "cover.featuredSubtitle": "A NEW STORY BEGINS HERE"
+  "cover.featuredSubtitle": "A NEW STORY BEGINS HERE",
+  "cover.goSubtitle": "SMALL COMMITS, BETTER STORIES"
 }

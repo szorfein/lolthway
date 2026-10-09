@@ -59,6 +59,7 @@
   "category.frontend": "前端开发",
   "category.notes": "开发笔记",
   "category.life": "生活随笔",
+  "category.learn": "学习编程",
   "post.archiveEyebrow": "THE ARCHIVE",
   "post.archiveTitle": "文字里的时光",
   "post.archiveIntro": "共 {count} 篇记录，每一篇都是成长的脚印。",
@@ -247,5 +248,6 @@
   "cover.designTitle": "Just create.",
   "cover.designSubtitle": "TURN AN IDEA INTO SOMETHING",
   "cover.featuredTitle": "Hello, {site}.",
-  "cover.featuredSubtitle": "A NEW STORY BEGINS HERE"
+  "cover.featuredSubtitle": "A NEW STORY BEGINS HERE",
+  "cover.goSubtitle": "SMALL COMMITS, BETTER STORIES"
 }

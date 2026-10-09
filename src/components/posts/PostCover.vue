@@ -37,6 +37,11 @@ const labels: Record<string, { icon: string; title: string; sub: string }> = {
     title: t("cover.gitTitle"),
     sub: t("cover.gitSubtitle"),
   },
+  go: {
+    icon: "icon-[simple-icons--go]",
+    title: "Golang",
+    sub: t("cover.goSubtitle"),
+  },
   design: {
     icon: "icon-[lucide--sparkles]",
     title: t("cover.designTitle"),
@@ -169,6 +174,10 @@ small {
 .design {
   background: #e5e6fa;
   color: #8283b5;
+}
+.go {
+  background: #cfe8ef;
+  color: #00add8;
 }
 .featured {
   background: #e9e1f4;

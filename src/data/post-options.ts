@@ -1,10 +1,8 @@
 import { t } from "../i18n";
-export const categoryNames = ["frontend", "notes", "life"] as const;
+export const categoryNames = ["frontend", "notes", "life", "learn"] as const;
 export type Category = (typeof categoryNames)[number];
 export const categoryLabel = (category: string) =>
-  categoryNames.includes(category as Category)
-    ? t(`category.${category as Category}`)
-    : category;
+  categoryNames.includes(category as Category) ? t(`category.${category as Category}`) : category;
 // Preserve links and frontmatter written before language-independent IDs.
 export function normalizeCategory(value: string): string {
   const legacy: Record<string, Category> = {
@@ -13,9 +11,7 @@ export function normalizeCategory(value: string): string {
     生活随笔: "life",
   };
   return (
-    legacy[value] ??
-    categoryNames.find((category) => categoryLabel(category) === value) ??
-    value
+    legacy[value] ?? categoryNames.find((category) => categoryLabel(category) === value) ?? value
   );
 }
 export const coverNames = [
@@ -27,4 +23,5 @@ export const coverNames = [
   "typescript",
   "git",
   "design",
+  "go",
 ] as const;
