@@ -44,7 +44,6 @@ cd first-app
 ## Generate the go.mod
 
 ```sh
-mkdir first-app && cd first-app
 go mod init hello_world
 ```
 
