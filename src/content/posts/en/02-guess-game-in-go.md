@@ -8,32 +8,33 @@ tags: ["go", "learn-go"]
 cover: go
 ---
 
-We going to build a "Guess game" for the next step. It's a classic game when you learn how to code in different language. You can see an example of what is it [here](https://c-lang-learning.com/en/game-projects.html#game1).
+We are going to build a "Guess game" for the next step. It's a classic game when you learn how to code. You can see an example of what is it [here](https://c-lang-learning.com/en/game-projects.html#game1).
 
-Before coding anything, just things to all steps the program's will need
+Before coding anything, just think of all the steps the program will need:
 
-- Create a random number, something between 0-100 for start.
+- Create a random number, something between 0-100 to start.
 - The program will ask the user for a number, so we need to capture the answer
-- Create a loop for the program, the game quit when you found the right number.
-- Compare the answer with the random number, the program tell if the number is greater or lower
+- Create a loop for the program, the game quits when you find the right number.
+- Compare the answer with the random number, the program tells if the number is greater or lower
 
 ## Variable declaration
-In Go, you have two way to declare a variable
+
+In Go, you have two ways to declare a variable
 
 ```go
 var chaosNumber = 10; // normal way
-chaosNumber := 10; // or shorter
+chaosNumber := 10; // or shorter. Some people feel that the := operator is an ugly symbol
 ```
 
-Avoid to mix between `=` or `:=`, `:=` is used to declare a variable while `=` assign a value to a variable.
+Avoid mixing `=` and `:=`. The `:=` operator is used to declare a variable, while `=` assigns a value to a variable.
 
 ## Declare a random number
 
-There are two library in Go for this, `math/rand` and `crypto/rand`. I think the `math/rand` is the most simple for this program, so we going to use that.
+There are two libraries in Go for this, `math/rand` and `crypto/rand`. I think the `math/rand` is the simplest for this program, so we are going to use that.
 
 ```go
 go doc math/rand
-go doc rand.intl
+go doc rand.intln
 ```
 
 So at this step, your program `main.go` would look like this:
@@ -46,27 +47,27 @@ func main() {
 randomNumber := rand.Intn(100) // generate a number between 0 and 100 (max)
 fmt.Printf("Number is %d\n", randomNumber)
 }
-````
+```
 
-If you run the program two time, you should have two different number unless you are very lucky
+If you run the program two times, you should have two different numbers unless you are very lucky
 
 ```go
 go run main.go
 go run main.go
-````
+```
 
 ## Ask and capture the answer
 
-For capture the answer, you need `fmt.Scanln`. Don't hesitate to check with `go doc`
+To capture the answer, you need `fmt.Scanln`. Don't hesitate to check with `go doc`
 
 ```go
 fmt.Println("Please enter a number between 1 and 100")
 var input
 fmt.Scanln(&input)
-fmt.Printf("you enter %d", input)
+fmt.Printf("You entered %d", input)
 ```
 
-In Go, when you start using random value (like the user input), you should check than the "Type" is correct or check for error. Here we want an Integer (positive number) and nothing other so instead, do this:
+In Go, when you start using random values (like the user input), you should check that the "Type" is correct or check for errors. Here we want an "Integer" (positive number) and nothing else, so instead, do this:
 
 ```go
 fmt.Println("Please enter a number between 1 and 100")
@@ -157,4 +158,4 @@ func main() {
 }
 ```
 
-You can try to improve this program, count how munch tentatives you try, rewrite the code by using functions, etc...
+You can try to improve this program, count how many attempts you make before finding the right number, rewrite the code using functions, etc.
