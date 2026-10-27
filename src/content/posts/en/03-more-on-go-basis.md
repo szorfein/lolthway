@@ -37,10 +37,14 @@ m := map[string]int{
 fmt.Println(m) // display the whole map
 fmt.Printf("display %d\n", m["one"])
 
+delete(m, "four") // remove four
+
 // Iterating over map, the output is unordered, this use goroutine...
 for key, v := range m {
     fmt.Println("key:", key, "value:", v)
 }
+
+clear(m) // clear the whole map
 ```
 
 ## Pointers
@@ -140,3 +144,23 @@ func main() {
 	fmt.Println("End...")
 }
 ```
+
+In Go >=1.25, Go introduce a new method in the library `sync`, `WaitGroup.Go`. the program above is transformed as:
+
+```go
+func main() {
+	count := 15
+	var waitGroup sync.WaitGroup
+
+	fmt.Printf("Going to create %d goroutines.\n", count)
+	for _, i := range count {
+		waitGroup.Go(func(x int) {
+			fmt.Printf("%d ", x)
+		}(i)) // pass parameter to anonymous function
+	}
+	waitGroup.Wait() // replace Sleep
+	fmt.Println("End...")
+}
+```
+
+The `waitGroup.add()` and `defer waitGroup.Done()` are no longer necessary. Also `go func` become `waitGroup.Go func`.

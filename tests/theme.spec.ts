@@ -29,8 +29,8 @@ for (const reducedMotion of ["no-preference", "reduce"] as const) {
               [
                 ...document.querySelectorAll(
                   "body, .nav-header, .brand, nav, nav a, .main-container, " +
-                    ".card, .site-footer, .site-footer a, .wave-layer, .chip, " +
-                    ".post-cover, .paper",
+                  ".card, .site-footer, .site-footer a, .wave-layer, .chip, " +
+                  ".post-cover, .paper",
                 ),
               ].map((node) => {
                 const style = getComputedStyle(node);
