@@ -24,7 +24,7 @@ Paste your message: 84 111 100 97 121 32 105 115 32 84 117 101 32 79 99 116 32 5
 Your decrypted message is: Today is Tue Oct 27
 ```
 
-## Base App with a basic menu
+## Base app with a menu
 
 ```go
 package main
