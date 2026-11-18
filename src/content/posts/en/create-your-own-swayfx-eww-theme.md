@@ -151,15 +151,36 @@ Add all the fonts you think would look cool with your wallpaper. We'll test them
 
 ```yaml
 every_time: 5m
+execute: fc-cache -f
 tasks:
-  - name: catchy_things.zip
-    url: https://dl.dafont.com/dl/?f=catchy_things
-    to_dest: .local/share/fonts/new-theme/
+  - name: tomcat.zip
+    url: https://dl.dafont.com/dl/?f=tomcat_2
+    to_dest: .local/share/fonts/supercat
+  - name: citcat.zip
+    url: https://dl.dafont.com/dl/?f=citcat
+    to_dest: .local/share/fonts/supercat
+  - name: catways.zip
+    url: https://dl.dafont.com/dl/?f=catways
+    to_dest: .local/share/fonts/supercat
+  - name: catmark.zip
+    url: https://dl.dafont.com/dl/?f=cat_mark
+    to_dest: .local/share/fonts/supercat
+  - name: yellocat.zip
+    url: https://dl.dafont.com/dl/?f=yello_cat
+    to_dest: .local/share/fonts/supercat
+  - name: yellowcat.zip
+    url: https://dl.dafont.com/dl/?f=yellow_cat_2
+    to_dest: .local/share/fonts/supercat
+  - name: graphiccat.zip
+    url: https://dl.dafont.com/dl/?f=graphic_cat
+    to_dest: .local/share/fonts/supercat
 ```
 
-Priviligy font which include number in their typography.
+Save the file and launch Ryvst from the command line: `ryvst`, Ryvst will install and update your font directory in few seconds.
 
-Check font with their name
+Priviligy font which include number in their typography, it always look better.
+
+Test all the font one by one. Check their name with `fc-match`:
 
 ```sh
 fc-match -a | grep -i hello
@@ -178,7 +199,16 @@ You can adjust the size of the `$brand` on the class `.display_large`, `.display
 
 ## Connect on EWW
 
-Last settings, you can add your new theme on the change_theme widget of EWW.
+Last setting, add your image in the convert-imgs.sh, the script will minimize your image at start.
+
+    $EDITOR ~/.config/eww/daemons/convert-imgs.sh
+
+```sh
+IMGS_DIR="$HOME/images/"
+IMGS="holy.jpg jinx.png abyss.png vibe.png valyria.jpg wallpaper.png"
+```
+
+And add your theme in the changetheme widget
 
     $EDITOR ~/.config/eww/windows/changetheme.yuck
 
@@ -190,4 +220,4 @@ Last settings, you can add your new theme on the change_theme widget of EWW.
 
 Add you theme before others "in First", the `:path_image` will be created on your next reboot based on the image name.
 
-And it's all, it take some time but you have your wallpaper and colour :)
+And it's all, it take some time but you have your wallpaper and colour, enjoy :)
