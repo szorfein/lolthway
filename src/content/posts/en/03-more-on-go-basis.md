@@ -149,14 +149,14 @@ In Go >=1.25, Go introduce a new method in the library `sync`, `WaitGroup.Go`. t
 
 ```go
 func main() {
-	count := 15
+	count := []int{1, 4, 8}
 	var waitGroup sync.WaitGroup
 
-	fmt.Printf("Going to create %d goroutines.\n", count)
+	fmt.Printf("Going to create %d goroutines.\n", len(count))
 	for _, i := range count {
-		waitGroup.Go(func(x int) {
-			fmt.Printf("%d ", x)
-		}(i)) // pass parameter to anonymous function
+		waitGroup.Go(func() {
+			fmt.Printf("%d ", i)
+		}) // pass parameter to anonymous function
 	}
 	waitGroup.Wait() // replace Sleep
 	fmt.Println("End...")
